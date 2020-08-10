@@ -12,9 +12,6 @@ class ConnectionsController{
     async create(request: Request, response: Response){
         const { user_id } = request.body;
         const user = await db('users').where('users.id', '=', user_id).select('id');
-        if(!user[0]){
-            return response.json({'Erro':'Esse usuário não existe'}).status(400);
-        }
         await db('connections').insert({ user_id });
         return response.status(201).send();
     }

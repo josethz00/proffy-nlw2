@@ -29,7 +29,7 @@ const TeacherList: React.FC = ()=>{
     return(
         <div id="page-teacher-list" className="container">
             <PageHeader title="Estes são os proffys disponíveis">
-                <form id="search-teachers">
+                <form id="search-teachers" onSubmit={searchTeachers}>
                     <Select name="subject" label="Matéria" options={[
                         {value: 'Artes', label: 'Artes'},
                         {value: 'Biologia', label: 'Biologia'},
